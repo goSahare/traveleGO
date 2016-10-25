@@ -33,7 +33,7 @@ function sendMail(res, body) {
     sendmail({
         from: 'no-reply@travelego.com',
         to: body.email,
-        subject: 'Booking Confirm',
+        subject: 'Booking Confirmed from traveleGO',
         html: 'Hi ' + body.name + ' Your ticket is booked! Find your ticket as attachment',
         attachments: [{
             filename: 'ticket.pdf',
@@ -41,9 +41,9 @@ function sendMail(res, body) {
         }]
     }, function (err, reply) {
         if (err) {
-            res.send({'Oops! There was an error.'});
+            res.send('Oops! There was an error.');
         } else {
-            res.send('Email sent')
+            res.send('Email sent');
         }
     });
 }

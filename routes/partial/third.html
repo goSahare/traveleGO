@@ -7,7 +7,8 @@
     </div>
     <div>
         <div>{{userData.firstName + ' will depart for ' + userData.location.to.name + ' on ' +
-            userData.journeyDate.depart + 'and return on ' + userData.journeyDate.return}}
+            userData.journeyDate.depart.toDateString() +' and return on ' +
+            userData.journeyDate.return.toDateString() }}
         </div>
     </div>
     <div ng-show="emailStatus">Your Boarding pass has been send to your registered email, Please check you inbox/spam

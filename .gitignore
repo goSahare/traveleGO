@@ -1,0 +1,6 @@
+.babel/
+.idea/
+app-build/
+app-test/
+bower_components/
+node_modules/

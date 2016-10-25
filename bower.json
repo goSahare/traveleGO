@@ -1,0 +1,24 @@
+{
+  "name": "travelego",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "tags": [],
+  "dependencies": {
+    "angular": "1.4.9",
+    "jquery": "2.2.4",
+    "bootstrap": "3.3.4",
+    "angular-bootstrap": "1.2.4",
+    "angular-ui-router": "0.2.13",
+    "animate.css": "^3.5.1",
+    "lodash": "^4.16.4",
+    "angular-ui-select": "^0.19.4",
+    "components-font-awesome": "^4.6.3"
+  },
+  "devDependencies": {
+    "angular-mocks": "1.4.9"
+  },
+  "resolutions": {
+    "angular": "1.4.9"
+  }
+}

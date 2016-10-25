@@ -1,0 +1,68 @@
+<div>
+    <!-- <img src="../../asset/1.jpg" style="position: absolute; margin: 0px; padding: 0px; border: none; width: 1050px; height: 700px; max-height: none; max-width: none; z-index: -999999; left: -21.5px; top: 0px;"> -->
+    <nav class="navbar navbar-inverse navbar-no-bg" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#top-navbar-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">TraveleGO - Booking confirm</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="top-navbar-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href=""><strong>Sign In</strong></a>
+							<span class="li-social">
+								<a href=""><i class="fa fa-facebook"></i></a>
+								<a href="" target=""><i class="fa fa-twitter"></i></a>
+								<a href="" target=""><i class="fa fa-google-plus"></i></a>
+								<a href="" target=""><i class="fa fa-github"></i></a>
+							</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top content -->
+    <div class="top-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 form-box">
+
+                    <uib-tabset active="indexTab" justified="true">
+                        <div class="steps">
+                            <div class="progress">{{$state.current.name}}
+                                <div class="progress-line" data-now-value="16.66" data-number-of-steps="3"
+                                     ng-style="{width:  $state.current.name == 'home.first' ? '16.66%' : $state.current.name == 'home.second' ? '50%' : '100%'}">
+                                </div>
+                            </div>
+                            <div class="step active">
+                                <div class="step-icon"><i class="fa fa-user"></i></div>
+                                <uib-tab ui-sref="home.first" heading="Step One" style="pointer-events: none">
+                                </uib-tab>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon"><i class="fa fa-plane"></i></div>
+                                <uib-tab ui-sref="home.second" heading="Step Two" style="pointer-events: none">
+                                </uib-tab>
+                            </div>
+                            <div class="step">
+                                <div class="step-icon"><i class="fa fa-sign-out"></i></div>
+                                <uib-tab ui-sref="home.third" heading="Step Three" style="pointer-events: none">
+                                </uib-tab>
+                            </div>
+                        </div>
+                        </br></br>
+                        <div ui-view></div>
+                    </uib-tabset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>        

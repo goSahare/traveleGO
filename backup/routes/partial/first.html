@@ -1,0 +1,11 @@
+<div>
+    <ui-select ng-model="abc" theme="bootstrap"
+               validator="required" >
+        <ui-select-match placeholder="Select or search a country in the list...">
+            {{$select.selected}}
+        </ui-select-match>
+        <ui-select-choices  repeat="city in details.city track by $index ">
+            <span ng-bind="city"></span>
+        </ui-select-choices>
+    </ui-select>
+</div>

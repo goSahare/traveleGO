@@ -1,0 +1,17 @@
+<div>
+    <a href="mailto:gouravsahare@gmail.com">Send email to nowhere</a>
+    <form method="POST" action="http://formspree.io/gouravsahare@gmail.com">
+        <input type="email" placeholder="gouravsahare@gmail.com">
+        <textarea name="message" placeholder="HI there new"></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <ui-select ng-model="abc" theme="bootstrap"
+               validator="required" >
+        <ui-select-match placeholder="Select or search a country in the list...">
+            {{$select.selected}}
+        </ui-select-match>
+        <ui-select-choices  repeat="city in details.city track by $index ">
+            <span ng-bind="city"></span>
+        </ui-select-choices>
+    </ui-select>
+</div>

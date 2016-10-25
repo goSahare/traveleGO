@@ -1,0 +1,29 @@
+<div ng-init="">
+    <form role="form" name="userForm" novalidate>
+        <div class="form-group" ng-class="{ 'has-error': userForm.name.$touched && userForm.name.$invalid }">
+            <input type="text" name="name" class="form-control" placeholder="First name..."
+                   ng-model="userData.firstName" ng-pattern="/^[a-zA-Z ]{1,25}$/"
+                   ng-required="true" autocomplete="off"/>
+        </div>
+        <div class="form-group"
+             ng-class="{ 'has-error': userForm.first-name.$touched && userForm.first-name.$invalid }">
+            <input name="first-name" type="text" class="form-control" placeholder="Last name..."
+                   ng-model="userData.lastName" ng-pattern="/^[a-zA-Z ]{1,25}$/"
+                   ng-required="true" autocomplete="off"/>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': userForm.email.$touched && userForm.email.$invalid }">
+            <input name="email" type="email" class="form-control" placeholder="Email..."
+                   ng-model="userData.email" ng-required="true" autocomplete="off"/>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': userForm.phone.$touched && userForm.phone.$invalid }">
+            <input name="phone" type="text" class="form-control" placeholder="Phone..."
+                   ng-model="userData.phone" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/"
+                   ng-required="true" autocomplete="off"/>
+        </div>
+
+        <div class="pull-right">
+            <button type="button" class="btn btn-next" ng-disabled="userForm.$invalid" ui-sref="home.second">Next
+            </button>
+        </div>
+    </form>
+</div>

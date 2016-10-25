@@ -1,0 +1,84 @@
+<div ng-init="format ='dd-MMMM-yyyy';">
+    <form name="date" role="form" novalidate>
+
+        <div class="form-group">
+            <label class="pull-left">Destination From</label>
+            <ui-select name="dest_from" ng-model="userData.location.from" ng-change="userData.location.from"
+                       validator="required" required>
+                <ui-select-match placeholder="Select or search a country in the list...">
+                    {{$select.selected.name}}
+                </ui-select-match>
+                <ui-select-choices repeat="city in cities track by $index | highlight: $select.search">
+                    <span ng-bind="city.name"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        </br>
+        <div class="form-group">
+            <label class="pull-left">Destination To</label>
+            <ui-select name="dest_to" ng-model="userData.location.to" ng-change="userData.location.to"
+                       validator="required" required>
+                <ui-select-match placeholder="Select or search a country in the list...">
+                    {{$select.selected.name}}
+                </ui-select-match>
+                <ui-select-choices repeat="city in cities track by $index | highlight: $select.search">
+                    <span ng-bind="city.name"></span>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        </br>
+
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <label class="pull-left">Date Depart</label>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" required
+                           ng-model="userData.journeyDate.depart" name="date" placeholder="Select date"
+                           is-open="deportPopUp1.opened" datepicker-options="dateOptions" ng-required="true"
+                           close-text="Close" ng-click="deportDate1()"/>
+
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="departDate1()">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="help-block"
+                     ng-show="date.date.$error.date">
+                    <div class="error-text">Invalid date(eg.19-October-2016).</div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <label class="pull-left">Date Return</label>
+
+                <div class="input-group">
+                    <input type="text" class="form-control" uib-datepicker-popup="{{format}}" required
+                           ng-model="userData.journeyDate.return" name="date" placeholder="Select date"
+                           is-open="deportPopUp2.opened" datepicker-options="dateOptions" ng-required="true"
+                           close-text="Close" ng-click="deportDate2()"/>
+
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="departDate2()">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="help-block"
+                     ng-show="date.date.$error.date">
+                    <div class="error-text">Invalid date(eg.19-October-2016).</div>
+                </div>
+            </div>
+        </div>
+
+        </br>
+        </br>
+        <div class="buttons pull-right">
+            <button type="button" class="btn btn-previous" ui-sref="home.first">Previous</button>
+            <button type="button" class="btn btn-next" ng-disabled="date.$invalid" ui-sref="home.third">Next
+            </button>
+        </div>
+    </form>
+</div>

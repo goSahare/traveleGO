@@ -11,7 +11,7 @@ function routesConfig($stateProvider, $urlRouterProvider) {
             resolve: {
                 $cities: function ($http, $q) {
                     var defered = $q.defer();
-                    var citiesReq = 'http://192.168.10.83:5000/cities';
+                    var citiesReq = 'http://localhost:5000/cities';
                     var cities;
                     $http.post(citiesReq).then(function (resp) {
                         defered.resolve(resp);

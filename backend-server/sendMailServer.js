@@ -5,12 +5,12 @@ var bodyParser = require('body-parser');
 var twilio = require('twilio');
 var PDFDocument = require('pdfkit');
 var fs = require('fs');
-var clientTwilio = twilio('AC8d457de4d5aed8fb2ed6cbe5dc0043dc', 'b2ea03086ddc6c0115bd574551695aa7');
+var clientTwilio = twilio('------', '-----');
 var SabreDevStudio = require('sabre-dev-studio');
 
 var sabre_dev_studio = new SabreDevStudio({
-    client_id: 'V1:1zwun27bck7ih90m:DEVCENTER:EXT',
-    client_secret: 'pOahD11C',
+    client_id: '----',
+    client_secret: ---',
     uri: 'https://api.test.sabre.com'
 });
 
@@ -51,7 +51,7 @@ function sendMail(res, body) {
 function sendSMS(ph, name) {
     clientTwilio.sendMessage({
         to: '+91' + ph,
-        from: '+16302434483',
+        from: '---',
         body: 'Hi ' + name + ' , your ticket has been booked!, Have a safe journey.'
     }, function (error, message) {
         if (!error) {
